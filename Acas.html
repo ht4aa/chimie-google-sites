@@ -964,4 +964,22 @@ _._ModuleManager_initialize('view/XDKZTc/cEt90b/sy0/sy1/sy2/qkPXAf:1,2,3,4,5/vVE
 }).call(this,this.default_tk);
 // Google Inc.
 
-//# sourceURL=/_/atari/_/js/k=atari.tk.en.bxl4mBiO7Gs.O/am=CCBwAAw/d=1/rs=AGEqA5kp-ZwWgMCD5_WiOii_ok0IZSKtjw/m=view</script></div></div><div jscontroller="YV8yqd" jsaction="rcuQ6b:npT2md"></div></body></html>
+//# sourceURL=/_/atari/_/js/k=atari.tk.en.bxl4mBiO7Gs.O/am=CCBwAAw/d=1/rs=AGEqA5kp-ZwWgMCD5_WiOii_ok0IZSKtjw/m=view</script></div></div><div jscontroller="YV8yqd" jsaction="rcuQ6b:npT2md"></div><script>document.addEventListener("DOMContentLoaded",function(){
+  var map=[{re:/^(Apa|Apă|H[₂]?[₀]?O)/i,href:"H2O.html"},
+           {re:/^(Dioxid de carbon|CO[₂]?[₀]?)/i,href:"CO2.html"},
+           {re:/^(Clorura de sodiu|NaCl|Sare)/i,href:"NaCl.html"}];
+  document.querySelectorAll(".puwcIf").forEach(function(s){
+    var t=(s.textContent||"").trim();
+    var m=map.find(function(x){return x.re.test(t);});
+    if(!m) return;
+    var p=s.parentElement;
+    while(p && p.tagName!=="H1" && p.tagName!=="H2" && p.tagName!=="H3" && p.tagName!=="P" && p.getAttribute && !p.getAttribute("data-link-block")) {
+      if(p.parentElement && p.parentElement.children.length===1) p=p.parentElement; else break;
+    }
+    if(p && !p.dataset.linked){
+      p.dataset.linked="1";
+      p.style.cursor="pointer";
+      p.addEventListener("click",function(e){window.location.href=m.href;});
+    }
+  });
+});</script></body></html>
