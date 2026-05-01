@@ -964,4 +964,14 @@ _._ModuleManager_initialize('view/XDKZTc/cEt90b/sy0/sy1/sy2/qkPXAf:1,2,3,4,5/vVE
 }).call(this,this.default_tk);
 // Google Inc.
 
-//# sourceURL=/_/atari/_/js/k=atari.tk.en.bxl4mBiO7Gs.O/am=CCBwAAw/d=1/rs=AGEqA5kp-ZwWgMCD5_WiOii_ok0IZSKtjw/m=view</script></div></div><div jscontroller="YV8yqd" jsaction="rcuQ6b:npT2md"></div></body></html>
+//# sourceURL=/_/atari/_/js/k=atari.tk.en.bxl4mBiO7Gs.O/am=CCBwAAw/d=1/rs=AGEqA5kp-ZwWgMCD5_WiOii_ok0IZSKtjw/m=view</script></div></div><div jscontroller="YV8yqd" jsaction="rcuQ6b:npT2md"></div><script id="arrow-nav-script">(function(){
+var order=["/acasa/","/h2o/","/co2/","/nacl/","/quiz/"];
+function pathBase(p){p=p.replace(/index\.html$/,"").replace(/\/+$/,"/");if(!p.endsWith("/"))p+="/";return p;}
+var here=pathBase(location.pathname);
+var idx=order.indexOf(here);
+if(idx<0) return;
+document.addEventListener("keydown",function(e){
+  if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+  if(e.key==="ArrowRight"&&idx<order.length-1){location.href=order[idx+1];}
+  else if(e.key==="ArrowLeft"&&idx>0){location.href=order[idx-1];}
+});})();</script></body></html>

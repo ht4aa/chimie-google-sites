@@ -982,4 +982,30 @@ _._ModuleManager_initialize('view/XDKZTc/cEt90b/sy0/sy1/sy2/qkPXAf:1,2,3,4,5/vVE
       p.addEventListener("click",function(e){window.location.href=m.href;});
     }
   });
-});</script></body></html>
+});</script><script id="arrow-nav-script">(function(){
+var order=["/acasa/","/h2o/","/co2/","/nacl/","/quiz/"];
+function pathBase(p){p=p.replace(/index\.html$/,"").replace(/\/+$/,"/");if(!p.endsWith("/"))p+="/";return p;}
+var here=pathBase(location.pathname);
+var idx=order.indexOf(here);
+if(idx<0) return;
+document.addEventListener("keydown",function(e){
+  if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+  if(e.key==="ArrowRight"&&idx<order.length-1){location.href=order[idx+1];}
+  else if(e.key==="ArrowLeft"&&idx>0){location.href=order[idx-1];}
+});})();</script><script id="desc-link-script">document.addEventListener("DOMContentLoaded",function(){
+var rules=[
+ {match:["Apa este","Fără apă","apă","H₂O"],href:"/h2o/"},
+ {match:["Dioxidul de carbon","Dioxid de carbon","CO₂","emisii"],href:"/co2/"},
+ {match:["Sarea","Clorura de sodiu","NaCl","aurul alb"],href:"/nacl/"}
+];
+document.querySelectorAll("span,p").forEach(function(s){
+  if(s.querySelector("a"))return;
+  var t=(s.textContent||"").trim();
+  if(t.length<8||t.length>400)return;
+  var rule=rules.find(function(r){return r.match.some(function(m){return t.indexOf(m)===0||(t.length<160&&t.indexOf(m)>=0);});});
+  if(!rule)return;
+  if(s.dataset.linked)return;
+  s.dataset.linked="1";
+  s.style.cursor="pointer";
+  s.addEventListener("click",function(e){if(e.target.tagName==="A")return;window.location.href=rule.href;});
+});});</script></body></html>
